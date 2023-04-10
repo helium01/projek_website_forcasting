@@ -40,17 +40,50 @@ def yamaha():
     return render_template('yamaha/yamaha.html',data=hasil)
 
 # roating tambah
-@app.route('/kawasaki_tambah')
+@app.route('/kawasaki_tambah', methods=['GET', 'POST'])
 def kawasaki_tambah():
-    return render_template('kawasaki/tambah.html')
-@app.route('/suzuki_tambah')
+    if request.method=='GET':
+        return render_template('kawasaki/tambah.html')
+    else:
+        tahun=request.form['tahun']
+        minat=request.form['minat']
+        penjualan=request.form['penjualan']
+        trand=request.form['trand']
+        data=[tahun,minat,penjualan,trand]
+        koneksi.tambah('honda',data)
+    
+@app.route('/suzuki_tambah', methods=['GET', 'POST'])
 def suzuki_tambah():
-    return render_template('suzuki/tambah.html')
-@app.route('/honda_tambah')
+    if request.method=='GET':
+        return render_template('suzuki/tambah.html')
+    else:
+        tahun=request.form['tahun']
+        minat=request.form['minat']
+        penjualan=request.form['penjualan']
+        trand=request.form['trand']
+        data=[tahun,minat,penjualan,trand]
+        koneksi.tambah('honda',data)
+@app.route('/honda_tambah', methods=['GET', 'POST'])
 def honda_tambah():
-    return render_template('honda/tambah.html')
-@app.route('/yamaha_tambah')
+    if request.method=='GET':
+        return render_template('honda/tambah.html')
+    else:
+        tahun=request.form['tahun']
+        minat=request.form['minat']
+        penjualan=request.form['penjualan']
+        trand=request.form['trand']
+        data=[tahun,minat,penjualan,trand]
+        koneksi.tambah('honda',data)
+@app.route('/yamaha_tambah', methods=['GET', 'POST'])
 def yamaha_tambah():
-    return render_template('yamaha/tambah.html')
+    if request.method=='GET':
+        return render_template('yamaha/tambah.html')
+    else:
+        tahun=request.form['tahun']
+        minat=request.form['minat']
+        penjualan=request.form['penjualan']
+        trand=request.form['trand']
+        data=[tahun,minat,penjualan,trand]
+        koneksi.tambah('honda',data)
 if __name__=="__main__":
     app.run(debug=True)
