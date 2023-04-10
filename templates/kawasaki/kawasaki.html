@@ -1,0 +1,63 @@
+{%include 'layout/header.html'%}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Dashboard</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard v1</li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">tahun</th>
+              <th scope="col">penjualan</th>
+              <th scope="col">minat</th>
+              <th scope="col">trand</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for rs in data%}
+            <tr>
+              <th scope="row">{{ rs.0 }}</th>
+              <td>{{ rs.3 }}</td>
+              <td>{{ rs.1 }}</td>
+              <td>{{ rs.2 }}</td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
+      <!-- Main row -->
+
+      <!-- /.row (main row) -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{%include 'layout/footer.html'%}
